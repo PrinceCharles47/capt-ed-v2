@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
 import NavigationDrawer from "./NavigationDrawer";
+import NavDrawer from "./NavDrawer";
 
 export default function Root({}) {
   return (
     <>
-      <NavigationDrawer>
+      <NavDrawer>
         <Outlet />
-      </NavigationDrawer>
+      </NavDrawer>
+      {/* <NavigationDrawer>
+        <Outlet />
+      </NavigationDrawer> */}
     </>
   );
 }

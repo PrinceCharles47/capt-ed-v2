@@ -1,14 +1,14 @@
-import SearchBar from "../../components/SearchBar";
+import CommunityHeader from "../../components/CommunityHeader";
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export default function HomePage({}) {
   return (
     <>
-      <SearchBar />
-      <p className="mt-5">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
-        error corporis, officiis impedit ipsa veritatis sed labore nobis culpa
-        obcaecati quidem. Ab quisquam ipsum id nulla nihil dicta soluta at.
-      </p>
+      <CommunityHeader />
+      <Box component="div" sx={{m: "1rem"}}>
+        <Outlet />
+      </Box>
     </>
   );
 }
