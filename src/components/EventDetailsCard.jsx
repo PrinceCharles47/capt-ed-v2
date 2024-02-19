@@ -7,6 +7,29 @@ import {
   Divider,
 } from "@mui/material";
 
+const cardTagButtons = [
+  {
+    name: "Venue",
+    variant: "contained",
+    isSelected: true,
+  },
+  {
+    name: "Theme",
+    variant: "text",
+    isSelected: false,
+  },
+  {
+    name: "Program",
+    variant: "text",
+    isSelected: false,
+  },
+  {
+    name: "Others",
+    variant: "text",
+    isSelected: false,
+  },
+];
+
 const eventDetails = {
   name: "ICP BlockChain Hackthon",
   status: "Open",
@@ -16,21 +39,21 @@ const eventDetails = {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quam, incidunt velit sequi consequuntur explicabo ea officiis accusantium a veniam blanditiis necessitatibus? Quae, beatae similique nihil iste id qui consequatur?",
 };
 
-export default function EventCard({}) {
+export default function EventDetailsCard({}) {
   return (
     <Card elevation={0} variant="outlined" sx={{ borderRadius: 3 }}>
       <Card
-        elevation={0}
+      elevation={0}
         sx={{
           display: "flex",
           alignItems: "center",
           width: "100%",
           height: "200px",
           overflow: "hidden",
-          borderRadius: 0,
+          borderRadius: 0
         }}
       >
-        <img src={eventDetails.image} alt="poster" className="eventBanner" />
+        <img src={eventDetails.image} alt="poster" style={{width: "100%"}} />
       </Card>
       <CardContent>
         <Typography variant="body1" sx={{ fontWeight: "bold" }}>
@@ -56,17 +79,20 @@ export default function EventCard({}) {
           px: "1rem",
           width: "100%",
           display: "flex",
-          justifyContent: "end",
+          justifyContent: "space-between",
         }}
       >
-        <Button
-          size="small"
-          color="violet"
-          variant="text"
-          sx={{ fontWeight: "bold" }}
-        >
-          Event Details
-        </Button>
+        {cardTagButtons.map((btn) => (
+          <Button
+            key={Math.random()}
+            size="small"
+            fullWidth
+            color="violet"
+            variant={btn.variant}
+          >
+            {btn.name}
+          </Button>
+        ))}
       </CardActions>
     </Card>
   );

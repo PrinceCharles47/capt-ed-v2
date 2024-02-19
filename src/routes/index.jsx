@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import HomePage from "../pages/home/HomePage";
+import EventDetailsPage from "../pages/events/EventDetailsPage";
 import EventsPage from "../pages/events/EventsPage";
 
 // const home = {
@@ -8,14 +9,19 @@ import EventsPage from "../pages/events/EventsPage";
 //   element: <HomePage />,
 // };
 
-const events = {
-  path: "/",
+const event = {
+  path: "/events",
   element: <EventsPage />,
+};
+
+const eventDetails = {
+  path: "/",
+  element: <EventDetailsPage />,
 };
 
 const home = {
   element: <HomePage />,
-  children: [events],
+  children: [event, eventDetails],
 };
 
 const root = {

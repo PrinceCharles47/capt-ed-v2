@@ -7,29 +7,8 @@ import {
   IconButton,
 } from "@mui/material";
 import colors from "../utils/colors";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
-const community = {
-  name: "Information and Communications Technology Development Unit",
-  image: "/assets/spcf-ictdu.jpg",
-  memberCount: 250,
-};
-
-const headerButtons = [
-  { name: "Edit Details", icon: <EditOutlinedIcon sx={{ color: "white" }} /> },
-  {
-    name: "Invite Member",
-    icon: <AddCircleOutlineOutlinedIcon sx={{ color: "white" }} />,
-  },
-  {
-    name: "Add Event",
-    icon: <CalendarTodayOutlinedIcon sx={{ color: "white" }} />,
-  },
-];
-
-export default function CommunityHeader({}) {
+export default function CommunityHeader({headerButtons, community}) {
   return (
     <Box
       component="div"
