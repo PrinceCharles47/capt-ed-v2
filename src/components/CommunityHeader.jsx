@@ -79,7 +79,10 @@ export default function CommunityHeader({}) {
         }}
       >
         {headerButtons.map((btn) => (
-          <div key={Math.random()}>
+          <Box
+            key={Math.random()}
+            sx={{ width: { xs: "100%", sm: "inherit" } }}
+          >
             <Button
               sx={{ color: "white", display: { xs: "none", sm: "flex" } }}
               size="small"
@@ -88,16 +91,17 @@ export default function CommunityHeader({}) {
             >
               {btn.name}
             </Button>
-            <IconButton
+            <Button
               sx={{
                 color: "white",
                 display: { xs: "flex", sm: "none" },
               }}
               size="small"
+              fullWidth
             >
               {btn.icon}
-            </IconButton>
-          </div>
+            </Button>
+          </Box>
         ))}
       </Box>
     </Box>

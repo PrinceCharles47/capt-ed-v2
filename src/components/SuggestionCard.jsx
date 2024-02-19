@@ -9,11 +9,12 @@ import {
   Divider,
 } from "@mui/material";
 import colors from "../utils/colors";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
-export default function SuggestionCard({}) {
+export default function SuggestionCard({ name, description, type, votes }) {
   return (
     <Card elevation={0}>
-      <CardContent sx={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+      <CardContent sx={{ display: "flex", gap: "1rem", alignItems: "center", px: {xs: "0rem", lg: "1rem"} }}>
         <Card
           variant="outlined"
           sx={{
@@ -24,38 +25,46 @@ export default function SuggestionCard({}) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            borderColor: colors.primary,
+            borderRadius: 3,
           }}
         >
-          <p className="text-lg font-bold">47</p>
-          <p className="text-xs">VOTES</p>
+          <p className="text-lg font-bold" style={{ color: colors.primary }}>
+            {votes}
+          </p>
+          <p className="text-xs" style={{ color: colors.primary }}>
+            VOTES
+          </p>
         </Card>
         <Box>
           <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-            Suggestion One
+            {name}
           </Typography>
-          <Typography variant="caption">Type: Venue</Typography>
+          <Typography variant="body2">Type: {type}</Typography>
         </Box>
       </CardContent>
-      <CardContent sx={{ py: "0", mb: "1rem" }}>
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          expedita dolore laudantium reiciendis odio. Consequatur, sunt in
-          nostrum, excepturi deserunt illum, veritatis cumque ad ut maxime quos
-          optio ipsam aut.
-        </Typography>
+      <CardContent sx={{ py: "0", px: {xs: "0rem", lg: "1rem"}, mb: "1rem"}}>
+        <Typography>{description}</Typography>
       </CardContent>
-      <Divider />
-      <CardActions sx={{px: "1rem"}}>
+
+      <CardActions sx={{ px: {xs: "0rem", lg: "1rem"}, pb: "1rem" }}>
         <Typography
           variant="subtitle2"
           sx={{ fontStyle: "italic", mr: "auto", color: "gray" }}
         >
           You voted this suggestion
         </Typography>
-        <Button size="small" variant="contained" sx={{ ml: "auto" }}>
-          VOTE
+        <Button
+          size="small"
+          variant="text"
+          startIcon={<ThumbUpIcon />}
+          color="violet"
+          sx={{ ml: "auto" }}
+        >
+          <p className="font-bold" style={{color: colors.primary}}>VOTE</p>
         </Button>
       </CardActions>
+      <Divider />
     </Card>
   );
 }

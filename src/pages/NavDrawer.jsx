@@ -26,6 +26,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars, faFilter } from "@fortawesome/free-solid-svg-icons";
 import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
+import topCathLogo from "../assets/topcath-logo.png";
 
 const drawerButtons = [
   {
@@ -193,8 +194,20 @@ export default function NavDrawer({ children }) {
               style={{ color: colors.primary }}
             />
           </IconButton>
-          <Typography color={"black"} variant="body1" noWrap component="div">
-            Wala pang name
+          <img
+            className="mr-2 ml-1"
+            src={topCathLogo}
+            alt="logo"
+            style={{ width: "40px", height: "40px" }}
+          />
+          <Typography
+            color={"black"}
+            variant="body1"
+            noWrap
+            component="div"
+            sx={{ fontWeight: "bold", display: { xs: "none", md: "flex" } }}
+          >
+            UP<span style={{ color: colors.primary }}>PINION</span>
           </Typography>
           <TextField
             sx={{ ml: "auto" }}
