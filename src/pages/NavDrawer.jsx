@@ -26,6 +26,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars, faFilter } from "@fortawesome/free-solid-svg-icons";
 import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import topCathLogo from "../assets/topcath-logo.png";
 
 const drawerButtons = [
@@ -36,6 +37,10 @@ const drawerButtons = [
   {
     name: "Create a community",
     icon: <EmojiEmotionsOutlinedIcon sx={{ color: colors.primary }} />,
+  },
+  {
+    name: "Saved events",
+    icon: <BookmarkBorderIcon sx={{ color: colors.primary }} />,
   },
 ];
 

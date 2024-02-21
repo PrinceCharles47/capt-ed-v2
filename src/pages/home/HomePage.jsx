@@ -18,7 +18,7 @@ const headerButtons = [
     icon: <EditOutlinedIcon sx={{ color: "white" }} /> 
   },
   {
-    name: "Invite Member",
+    name: "Join Requests",
     icon: <AddCircleOutlineOutlinedIcon sx={{ color: "white" }} />,
   },
   {

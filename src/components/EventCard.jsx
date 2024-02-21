@@ -5,7 +5,10 @@ import {
   Button,
   Typography,
   Divider,
+  IconButton,
 } from "@mui/material";
+
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 const eventDetails = {
   name: "ICP BlockChain Hackthon",
@@ -32,7 +35,10 @@ export default function EventCard({}) {
       >
         <img src={eventDetails.image} alt="poster" className="eventBanner" />
       </Card>
-      <CardContent>
+      <CardContent sx={{position: "relative"}}>
+        <IconButton color="violet" sx={{position: "absolute", top: "0.5rem", right: "0.5rem"}}>
+          <BookmarkBorderIcon />
+        </IconButton>
         <Typography variant="body1" sx={{ fontWeight: "bold" }}>
           {eventDetails.name}
         </Typography>

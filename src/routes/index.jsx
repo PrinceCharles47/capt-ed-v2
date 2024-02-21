@@ -3,15 +3,21 @@ import Root from "../pages/Root";
 import HomePage from "../pages/home/HomePage";
 import EventDetailsPage from "../pages/events/EventDetailsPage";
 import EventsPage from "../pages/events/EventsPage";
+import CommunitiesPage from "../pages/community/CommunitiesPage";
 
 // const home = {
 //   path: "/",
 //   element: <HomePage />,
 // };
 
-const event = {
+const events = {
   path: "/events",
   element: <EventsPage />,
+};
+
+const communities = {
+  path: "/communities",
+  element: <CommunitiesPage />,
 };
 
 const eventDetails = {
@@ -21,12 +27,12 @@ const eventDetails = {
 
 const home = {
   element: <HomePage />,
-  children: [event, eventDetails],
+  children: [events, eventDetails],
 };
 
 const root = {
   element: <Root />,
-  children: [home],
+  children: [home, communities],
 };
 
 const routes = [root];
