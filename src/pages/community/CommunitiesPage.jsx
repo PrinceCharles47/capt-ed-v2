@@ -83,7 +83,8 @@ export default function CommunitiesPage({}) {
         display: "flex",
         flexDirection: "column",
         gap: "0.75rem",
-        m: "1rem"
+        m: "1rem",
+        mx: { lg: "5rem"}
       }}
     >
       <LabeledDivider label="Communities"></LabeledDivider>

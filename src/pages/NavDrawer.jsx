@@ -26,21 +26,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars, faFilter } from "@fortawesome/free-solid-svg-icons";
 import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import topCathLogo from "../assets/topcath-logo.png";
 
 const drawerButtons = [
   {
     name: "Join a community",
     icon: <GroupOutlinedIcon sx={{ color: colors.primary }} />,
+    path: "/communities",
   },
   {
     name: "Create a community",
     icon: <EmojiEmotionsOutlinedIcon sx={{ color: colors.primary }} />,
+    path: "/",
   },
   {
     name: "Saved events",
     icon: <BookmarkBorderIcon sx={{ color: colors.primary }} />,
+    path: "/saved-events",
   },
 ];
 
@@ -102,9 +105,21 @@ function DrawerButtons() {
       <List>
         {drawerButtons.map((item, index) => (
           <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ px: "1rem", py: "0.65rem", gap: "2rem" }}>
-              {item.icon}
-              <p className="text-sm">{item.name}</p>
+            <ListItemButton sx={{ gap: "2rem", p: 0 }}>
+              <NavLink
+                to={item.path}
+                style={({ isActive, isPending, isTransitioning }) => {
+                  return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isActive ? colors.primary : "black",
+                    backgroundColor: isActive ? colors.navBackground : "",
+                  };
+                }}
+                className="w-full px-4 py-3 rounded-sm flex gap-8 items-center"
+              >
+                {item.icon}
+                <p className="text-sm">{item.name}</p>
+              </NavLink>
             </ListItemButton>
           </ListItem>
         ))}
